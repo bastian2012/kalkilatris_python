@@ -1,0 +1,36 @@
+def kalkile_mwayen(not_list):
+    total = sum(not_list)
+    mwayen = total / len(not_list)
+    return mwayen
+
+def klasifye_mwayen(mwayen):
+    if mwayen >= 90:
+        return "A"
+    elif mwayen >= 80:
+        return "B"
+    elif mwayen >= 70:
+        return "C"
+    elif mwayen >= 60:
+        return "D"
+    else:
+        return "F"
+
+def afiche_rezilta(mwayen, klasifikasyon):
+    print(f"Mwayèn: {mwayen}")
+    print(f"Klasifikasyon: {klasifikasyon}")
+
+def mande_not():
+    not_list = []
+    n = int(input("Antre kantite nòt ou genyen: "))
+
+    for i in range(n):
+        not_input = float(input(f"Antre nòt {i + 1}: "))
+        not_list.append(not_input)
+
+    return not_list
+def lansman():
+    not_list = mande_not()
+    mwayen = kalkile_mwayen(not_list)
+    klasifikasyon = klasifye_mwayen(mwayen)
+    afiche_rezilta(mwayen, klasifikasyon)
+lansman()
